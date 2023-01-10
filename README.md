@@ -1,5 +1,11 @@
 # ProjektZespolowy
 
+### Stan na 11.01.2023 
+Zdecydowaliśmy się na skorzystanie z JavaFX do stworzenia aplikacji desktopowej.   
+Teraz staram się skonfigurować Gradle'a, ale nie jest łatwo bo ciągle trzeba coś łatać.   
+Jak się uda to będzie fajnie, bo będzie można robić frontend np. w CSS.   
+Dzięki temu uda się wykorzystać umiejętności poszczególnych osób w grupie.
+
 ### Plan na 21.10 - 27.10 
  W związku z faktem, iż posiadamy już schemat gry 
  postaramy się rozpocząć : 
