@@ -1,5 +1,13 @@
 # ProjektZespolowy
 
+### Stan na 15.03.2023   
+Zgodnie z założeniami dodaliśmy pierwsze modele. Właściwie to klasy w oparciu o nasz diagram. Byloby tego więcej    
+ale chcac osiągnąć możliwie największą ogólność i podatność na mofyfikacje naszego projektu musieliśmy przerobić kilka rzeczy.   
+Mianowicie na poziomie abstrakcyjnym wprowadziliśmy kilka zmian by np. dać programistom albo nawet użytkowinikowi tworzenie własnych map.   
+To podejście jest bardzo fajne ale sprawiło, że musieliśmy przesunąć wprowadzenie typowych bazodanowych modeli. Wszystko po to by jak najlepiej wszystko dograć   
+i nie tworzyć projektu metodą chałupniczą tylko zabrać się za to w bardziej przemyślany sposób. Ponadto korzystając z różnorodności naszych predyspozycji   
+rozwijamy warstwę graficzną. Wszystko po to by nie tworzyć zbędnych przestojów w postępach. Ponieważ tworzenie warstwy abstrakcyjnej nie koliduje z grafiką. Potem będzie problem, ponieważ funkcje będą zależały od przycisków etc. Dlatego pomyśleliśmy o tym już teraz i gdy pierwsza częśc backendu będzie gotowa będzie można przejść płynnie do funkcji, gdyż część elementów wizualnych będzie już gotowa do zaprogramowania. Ponadto w prywatnym projekcie pobocznym podłączyłem baze danych chmurową by zobaczyć jak to działa i by móc w mniej eksperymentalny sposób podpiąć nasz projekt do tego typu rozwiąń. Póki co myśle nad firebase'em, ponieważ jest tam jeszcze wiele innych funkcji jak np. autentykacja. Ale jeszcze będę się rozglądał, by wybrać może coś innego. Na koniec jeszcze chciałbym  zaznaczyć, że foldery z grafikami bedą na githubie później, ponieważ komputer obecnie jest w serwisie. 
+
 ### Stan na 11.01.2023 
 Zdecydowaliśmy się na skorzystanie z JavaFX do stworzenia aplikacji desktopowej.   
 Teraz staram się skonfigurować Gradle'a, ale nie jest łatwo bo ciągle trzeba coś łatać.   
