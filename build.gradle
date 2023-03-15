@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
 }
@@ -7,9 +8,14 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation 'org.hibernate:hibernate-core:6.1.7.Final'
+}
+
 javafx {
     version = "19"
     modules = [ 'javafx.controls' ]
 }
 
 mainClassName = 'Main'
+
