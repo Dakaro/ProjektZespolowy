@@ -1,5 +1,8 @@
 # ProjektZespolowy
 
+### Stan na 17.04.2023   
+Dodaliśmy pierwsze sceny i zmockowaliśmy ich działanie.   
+
 ### Stan na 15.03.2023   
 Zgodnie z założeniami dodaliśmy pierwsze modele. Właściwie to klasy w oparciu o nasz diagram. Byloby tego więcej    
 ale chcac osiągnąć możliwie największą ogólność i podatność na mofyfikacje naszego projektu musieliśmy przerobić kilka rzeczy.   
