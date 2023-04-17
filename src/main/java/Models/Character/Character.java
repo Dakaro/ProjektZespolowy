@@ -90,9 +90,9 @@ public  abstract class Character {
 
     abstract void setName();
 
-    public int useSpecialAttack(){
+  /*  public int useSpecialAttack(){
         //later
-    }
+    } */
 
     public Profession getProf(){
         return this.character.getProf();

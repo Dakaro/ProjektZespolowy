@@ -1,7 +1,17 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath 'org.javamodularity:moduleplugin:1.2.1'
+    }
+}
+
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
 }
 
 repositories {
@@ -10,11 +20,17 @@ repositories {
 
 dependencies {
     implementation 'org.hibernate:hibernate-core:6.1.7.Final'
+    implementation 'org.openjfx:javafx-base:15'
+    implementation 'org.openjfx:javafx-controls:15'
+    implementation 'org.openjfx:javafx-fxml:15'
+    implementation 'org.openjfx:javafx-graphics:15'
 }
 
+apply plugin: 'org.javamodularity.moduleplugin'
+
 javafx {
-    version = "19"
-    modules = [ 'javafx.controls' ]
+    version = "15"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 mainClassName = 'Main'

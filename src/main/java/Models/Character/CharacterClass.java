@@ -1,13 +1,6 @@
 package Models.Character;
-
-enum Profession {
-    WARRIOR,
-    SCOUT ,
-    MAGE,
-    UNDEFINED
-}
-
-class CharacterClass {
+import Models.Character.Profession;
+public class CharacterClass {
 
 static int defaultHealth = 50;
 static double defaultCriticalChance = 3.;
@@ -21,9 +14,9 @@ static int defaultHealthMonster = 80;
 static int defaultAttackMonsterMin = 20;
 static int defaultAttackMonsterMax = 50;
 
-    CharacterClass(){}
+    public CharacterClass(){}
 
-    Profession getProf(){
+    public Profession getProf(){
         return this.Prof;
     }
 
@@ -43,7 +36,7 @@ static int defaultAttackMonsterMax = 50;
         return this.defenseModifier;
     }
 
-    String getMainStatName(){
+    public String getMainStatName(){
         return this.mainStatName;
     }
 
@@ -67,31 +60,31 @@ static int defaultAttackMonsterMax = 50;
     protected int attackModifier;
     protected int vitalityModifier;
     protected int defenseModifier;
-     void setSpecialAbility(String ability){
+    public void setSpecialAbility(String ability){
         this.specialAbility = ability;
      }
 
-     void setMainStatName(String statName){
+     public void setMainStatName(String statName){
         this.mainStatName = statName;
      }
 
-     void setDefenseModifier(int modifier){
+     public void setDefenseModifier(int modifier){
          this.defenseModifier = modifier;
      }
 
-     void setMainStat(int mainStat){
+     public void setMainStat(int mainStat){
         this.mainStat = mainStat;
      }
 
-     void setVitalityModifier(int modifier){
+     public void setVitalityModifier(int modifier){
          this.vitalityModifier = modifier;
      }
 
-     void setAttackModifier(int modifier){
+     public void setAttackModifier(int modifier){
             this.attackModifier = modifier;
      }
 
-     void setProf(Profession prof){
+     public void setProf(Profession prof){
          this.Prof = prof;
      }
 
