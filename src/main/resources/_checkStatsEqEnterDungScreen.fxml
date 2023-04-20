@@ -41,7 +41,7 @@
          </cursor>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="517.0" layoutX="519.0" layoutY="36.0" stroke="BLACK" strokeType="INSIDE" style="-fx-opacity: 0.6;" width="352.0" />
-      <Text id="current_checking_info" fx:id="infoText" fill="WHITE" layoutX="531.0" layoutY="67.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="329.0">
+      <Text id="current_checking_info" fx:id="infoText" fill="WHITE" layoutX="531.0" layoutY="67.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="info" textAlignment="CENTER" wrappingWidth="329.0">
          <font>
             <Font size="16.0" />
          </font>
