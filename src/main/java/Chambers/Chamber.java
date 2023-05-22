@@ -1,10 +1,10 @@
 package Chambers;
 
-import Game.ChamberObserver;
+import Game.ChamberMediator;
 import Game.Game;
 import Game.View;
 
-public abstract class Chamber implements ChamberObserver {
+public abstract class Chamber implements ChamberMediator {
 
     public Chamber option1;
     public Chamber option2;
@@ -15,7 +15,7 @@ public abstract class Chamber implements ChamberObserver {
         this.game = game;
     }
 
-    void loadChamber(){}
+    public void loadChamber(){}
 
     @Override
     public void selectOption1(){

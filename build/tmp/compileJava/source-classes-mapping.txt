@@ -2,38 +2,60 @@ Models/Character/profiles.java
  Models.Character.Mage
  Models.Character.Scout
  Models.Character.Warrior
-Game/ChamberObserver.java
- Game.ChamberObserver
-Models/Character/Character.java
- Models.Character.Character
 Game/ButtonClickedObserver.java
  Game.ButtonClickedObserver
+Models/Character/Profession.java
+ Models.Character.Profession
+Models/Character/Character.java
+ Models.Character.Character
 Models/Character/CharacterClass.java
  Models.Character.CharacterClass
  Models.Character.CharacterClass$1
-Models/Character/Profession.java
- Models.Character.Profession
+Game/ChamberMediator.java
+ Game.ChamberMediator
+Chambers/TrapChamber.java
+ Chambers.TrapChamber
+Chambers/DiedChamber.java
+ Chambers.DiedChamber
+Chambers/EmptyRoom.java
+ Chambers.EmptyRoom
+Chambers/WinChamber.java
+ Chambers.WinChamber
+Game/Game.java
+ Game.Game
+Chambers/LeftRight.java
+ Chambers.LeftRight
+Chambers/TraderChamber.java
+ Chambers.TraderChamber
+Controllers/ChamberController.java
+ Controllers.ChamberController
+Chambers/ChestAfterOpen.java
+ Chambers.ChestAfterOpen
+Chambers/DungeonChamber.java
+ Chambers.DungeonChamber
+Chambers/Boss.java
+ Chambers.Boss
 Controllers/MainMenuController.java
  Controllers.MainMenuController
+Chambers/MonsterChamber.java
+ Chambers.MonsterChamber
 Chambers/FoodFountainChamber.java
  Chambers.FoodFountainChamber
 Main.java
  Main
 Game/View.java
  Game.View
-Chambers/DiedChamber.java
- Chambers.DiedChamber
-Chambers/WinChamber.java
- Chambers.WinChamber
-Game/Game.java
- Game.Game
+Chambers/BreakTime.java
+ Chambers.BreakTime
 Chambers/Chamber.java
  Chambers.Chamber
+Chambers/CheckStats.java
+ Chambers.CheckStats
 Chambers/FightChamber.java
  Chambers.FightChamber
-Controllers/ChamberController.java
- Controllers.ChamberController
+Chambers/HealthChamber.java
+ Chambers.HealthChamber
 Controllers/ClassSelectController.java
  Controllers.ClassSelectController
-Chambers/DungeonChamber.java
- Chambers.DungeonChamber
+Chambers/ChestCheck.java
+ Chambers.ChestCheck

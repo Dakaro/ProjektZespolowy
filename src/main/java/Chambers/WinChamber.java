@@ -9,7 +9,7 @@ public class WinChamber extends Chamber {
     }
 
     @Override
-    void loadChamber() {
+    public void loadChamber() {
         game.getView().loadWin(game, this);
     }
 }

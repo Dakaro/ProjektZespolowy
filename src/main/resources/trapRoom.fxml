@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="Controllers.ChamberController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
@@ -34,7 +34,7 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button id="button_getOut" fx:id="button_getOut" layoutX="380.0" layoutY="268.0" mnemonicParsing="false" text="Get out">
+      <Button onAction="#onOption1Clicked" id="button_getOut" fx:id="button_getOut" layoutX="380.0" layoutY="268.0" mnemonicParsing="false" text="Get out">
          <font>
             <Font size="30.0" />
          </font>

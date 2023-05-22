@@ -9,7 +9,7 @@ public class FightChamber extends Chamber {
     }
 
     @Override
-    void loadChamber() {
+    public void loadChamber() {
         game.getView().loadFight(game, this);
     }
 }

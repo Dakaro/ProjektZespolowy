@@ -9,7 +9,7 @@ public class FoodFountainChamber extends Chamber {
     }
 
     @Override
-    void loadChamber() {
+    public void loadChamber() {
         game.getView().loadFood(game, this);
     }
 }

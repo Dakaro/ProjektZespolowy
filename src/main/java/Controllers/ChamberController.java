@@ -3,7 +3,7 @@ package Controllers;
 
 import Chambers.Chamber;
 import Game.Game;
-import Game.ChamberObserver;
+import Game.ChamberMediator;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 
@@ -27,12 +27,15 @@ public class ChamberController {
         observer.selectOption2();
     }
 
-    private ChamberObserver observer;
+    @FXML
+    public void onOption3Clicked(){
+
+    }
+
+    private ChamberMediator observer;
 
     public void setObserver(Game observer) {
         this.observer = observer;
     }
-
-
 
 }

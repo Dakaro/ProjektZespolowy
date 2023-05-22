@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane fx:controller="Controllers.ChamberController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView id="background" fitHeight="600.0" fitWidth="900.0">
+         <image>
+            <Image url="@graphics/dungeon.jpg" />
+         </image>
+      </ImageView>
+      <Button onAction="#onOption1Clicked" id="button__left" fx:id="buttonLeft" layoutX="14.0" layoutY="268.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="150.0" text="LEFT">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button onAction="#onOption2Clicked" id="button__right" fx:id="buttonRight" alignment="CENTER" layoutX="736.0" layoutY="268.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="150.0" text="RIGHT">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</Pane>
