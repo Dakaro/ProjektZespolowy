@@ -26,5 +26,7 @@ public abstract class Chamber implements ChamberMediator {
         option2.loadChamber();
     }
 
+    public void action(){}
+
 }
 

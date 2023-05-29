@@ -1,18 +1,30 @@
 package Game;
 
 import Chambers.*;
+import Maps.MapGenerator;
 import Models.Character.CharacterClass;
+import Models.Character.Hero;
 import Models.Character.Profession;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Game implements ButtonClickedObserver, ChamberMediator{
 
-    CharacterClass hero = new CharacterClass();
+    Hero hero = new Hero();
+    MapGenerator mapGenerator;
     View view = null;
+
+    public Hero getHero(){
+        return hero;
+    }
+
     public Game(){
+        mapGenerator = new MapGenerator(this);
+        mapGenerator.prepareMap();
     }
 
     public View getView(){
@@ -28,10 +40,12 @@ public class Game implements ButtonClickedObserver, ChamberMediator{
 
     @Override
     public void onSelectButton(Profession prof, String name){
-        hero.setProf(prof);
-        hero.setMainStatName(name);
-        System.out.println(hero.getProf() );
-        System.out.println(hero.getMainStatName() );
+        hero.chooseClass(prof);
+        hero.setName(name);
+        System.out.println("PROF: " +hero.getProf() );
+        System.out.println(hero.getName() );
+
+
         prepareMap();
 
     }
@@ -47,6 +61,12 @@ public class Game implements ButtonClickedObserver, ChamberMediator{
 
 
     void  prepareMap(){
+
+      //  int version = ThreadLocalRandom.current().nextInt(0, 5);
+        Chamber myMap = mapGenerator.getMap(1);
+        myMap.loadChamber();
+
+        /*
         WinChamber win = new WinChamber(this);
         DiedChamber died = new DiedChamber(this);
         FoodFountainChamber food = new FoodFountainChamber(this);
@@ -103,6 +123,8 @@ public class Game implements ButtonClickedObserver, ChamberMediator{
         n15.option1 = n15;
 
         n1.loadChamber();
+
+         */
 
 
     }

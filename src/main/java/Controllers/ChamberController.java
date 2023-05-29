@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 
 public class ChamberController {
 
-    Chamber chamber;
+    public Chamber chamber;
 
     public void setChamber(Chamber chamber){
         this.chamber = chamber;

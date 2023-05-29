@@ -1,7 +1,19 @@
 package Models.Character;
 
-public  abstract class Character {
+import java.util.concurrent.ThreadLocalRandom;
 
+public  abstract class Character {
+    int defaultHealth = 50;
+    double defaultCriticalChance = 3.;
+    int defaultAttackMin = 2;
+    int defaultAttackMax = 5;
+    int counterAttackMin = 2;
+    int counterAttackMax = 3;
+    int defaultMonsterDefense = 3;
+    double defaultMonsterCriticalChance = 15.;
+    int defaultHealthMonster = 80;
+    int defaultAttackMonsterMin = 20;
+    int defaultAttackMonsterMax = 50;
 
     protected int minimalAttack;
     protected int maximalAttack;
@@ -38,11 +50,11 @@ public  abstract class Character {
         return this.currentHealth;
     }
 
-    public void setCurrentHealth(int health){
+    public void setCurrentHealth(double health){
         if( health > this.getMaxHealth() ){
             health = this.getMaxHealth();
         }
-        this.currentHealth = health;
+        this.currentHealth = (int) health;
     }
 
     public double getCriticalChance(){
@@ -63,9 +75,9 @@ public  abstract class Character {
         return this.blockChance;
     }
 
-    abstract void setMaxHealth();
+    abstract void setMaxHealth(int i);
 
-    abstract void setDefense();
+    abstract void setDefense(int i);
 
     public int getDefence(){
         return this.defense;
@@ -90,13 +102,31 @@ public  abstract class Character {
 
     abstract void setName();
 
-  /*  public int useSpecialAttack(){
+   public int useSpecialAttack(){
         //later
-    } */
+       return 0;
+    }
 
     public Profession getProf(){
         return this.character.getProf();
     }
 
+    boolean useSpecialEffect(Character opponent){
+       return true;
+    }
+
+
+    void attackOpponent(Character opponent){
+        if (!this.useSpecialEffect(opponent))
+        {
+            return;
+        }
+        int damage = ThreadLocalRandom.current().nextInt(this.getMinimalAttack(), this.getMaximalAttack());
+        damage = damage * this.useSpecialAttack() - opponent.getDefence();
+        if (damage < 1)
+            damage = 1;
+
+        opponent.getDamage(damage);
+    }
 
 }

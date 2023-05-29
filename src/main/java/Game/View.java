@@ -1,10 +1,11 @@
 package Game;
 
 import Chambers.Chamber;
+import Chambers.TrapChamber;
 import Controllers.ChamberController;
 import Controllers.ClassSelectController;
 import Controllers.MainMenuController;
-import javafx.fxml.FXML;
+import Controllers.TrapChamberController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,7 +28,7 @@ public class View{
 
     */
 
-   private FXMLLoader loadRoom(String path)  {
+   private FXMLLoader loadRoom(String path )  {
         FXMLLoader loader = new FXMLLoader();
 
         Parent root = null;
@@ -51,6 +52,7 @@ public class View{
       FXMLLoader myLoader = loadRoom("/_mainMenuScreen.fxml");
        MainMenuController myController = myLoader.getController();
        myController.setObserver(game);
+
    }
 
    public void loadSelectClassRoom(Game game){
@@ -151,10 +153,13 @@ public class View{
     }
 
     public void loadTrapChamber(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/trapRoom.fxml");
-        ChamberController myController = myLoader.getController();
+        FXMLLoader loader = loadRoom("/trapRoom.fxml");
+
+        TrapChamberController myController = (TrapChamberController) loader.getController();
         myController.setObserver(game);
         myController.setChamber(chamber);
+
+
     }
 
     public void loadBreak(Game game, Chamber chamber){

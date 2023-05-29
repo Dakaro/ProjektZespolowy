@@ -27,22 +27,26 @@ public class MapGenerator {
     Chamber[][] maps = new Chamber[5][20];
 
     public MapGenerator(Game game){
-        WinChamber win = new WinChamber(game);
-        DiedChamber died = new DiedChamber(game);
-        FoodFountainChamber food = new FoodFountainChamber(game);
-        FightChamber fight = new FightChamber(game);
-        DungeonChamber dungeon = new DungeonChamber(game);
-        EmptyRoom empty = new EmptyRoom(game);
-        LeftRight leftRight = new LeftRight(game);
-        CheckStats checkStats = new CheckStats(game); //one exit road
-        BreakTime breakTime = new BreakTime(game); // one exit road
-        ChestCheck chestCheck = new ChestCheck(game); //one exit road
-        HealthChamber healthChamber = new HealthChamber(game);
-        MonsterChamber monsterChamber = new MonsterChamber(game);
-        TraderChamber traderChamber = new TraderChamber(game);
-        TrapChamber trapChamber = new TrapChamber(game); //one exit road
-        ChestAfterOpen chestAfterOpen = new ChestAfterOpen(game); // one exit road
-        Boss boss = new Boss(game);
+         win = new WinChamber(game);
+         died = new DiedChamber(game);
+         food = new FoodFountainChamber(game);
+         fight = new FightChamber(game);
+         dungeon = new DungeonChamber(game);
+         empty = new EmptyRoom(game);
+         leftRight = new LeftRight(game);
+         checkStats = new CheckStats(game); //one exit road
+         breakTime = new BreakTime(game); // one exit road
+         chestCheck = new ChestCheck(game); //one exit road
+         healthChamber = new HealthChamber(game);
+         monsterChamber = new MonsterChamber(game);
+         traderChamber = new TraderChamber(game);
+         trapChamber = new TrapChamber(game); //one exit road
+         chestAfterOpen = new ChestAfterOpen(game); // one exit road
+         boss = new Boss(game);
+    }
+
+    public Chamber getMap( int version ){
+        return maps[version][0];
     }
 
     public void prepareMap(){
