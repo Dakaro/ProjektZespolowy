@@ -42,8 +42,8 @@ public class TrapChamberController extends ChamberController implements Initiali
     }
 
 
-    public void setObserver(Game observer) {
-        super.setObserver(observer);
+    public void setMediator(Game mediator) {
+        super.setMediator(mediator);
     }
 
     @FXML

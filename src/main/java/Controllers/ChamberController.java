@@ -4,7 +4,6 @@ package Controllers;
 import Chambers.Chamber;
 import Game.Game;
 import Game.ChamberMediator;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 
 public class ChamberController {
@@ -18,13 +17,13 @@ public class ChamberController {
     @FXML
     public void onOption1Clicked() {
         chamber.selectOption1();
-        observer.selectOption1();
+        mediator.selectOption1();
     }
 
     @FXML
     public void onOption2Clicked(){
         chamber.selectOption2();
-        observer.selectOption2();
+        mediator.selectOption2();
     }
 
     @FXML
@@ -32,10 +31,10 @@ public class ChamberController {
 
     }
 
-    private ChamberMediator observer;
+    private ChamberMediator mediator;
 
-    public void setObserver(Game observer) {
-        this.observer = observer;
+    public void setMediator(Game mediator) {
+        this.mediator = mediator;
     }
 
 }

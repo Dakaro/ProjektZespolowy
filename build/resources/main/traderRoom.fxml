@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<Pane fx:controller="Controllers.ChamberController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="Controllers.TraderChamberController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
@@ -23,7 +23,7 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button id="button_firstItem" fx:id="button_firstItem" layoutX="497.0" layoutY="62.0" mnemonicParsing="false" text="Buy">
+      <Button onAction="#buyFirstItem" id="button_firstItem" fx:id="button_firstItem" layoutX="497.0" layoutY="62.0" mnemonicParsing="false" text="Buy">
          <font>
             <Font size="30.0" />
          </font>
@@ -31,7 +31,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="button_secondItem" layoutX="497.0" layoutY="268.0" mnemonicParsing="false" styleClass="button_secondItem" text="Buy">
+      <Button onAction="#buySecondItem" fx:id="button_secondItem" layoutX="497.0" layoutY="268.0" mnemonicParsing="false" styleClass="button_secondItem" text="Buy">
          <font>
             <Font size="30.0" />
          </font>
@@ -39,7 +39,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button id="button_thirdItem" fx:id="button_thirdItem" layoutX="497.0" layoutY="463.0" mnemonicParsing="false" text="Buy">
+      <Button onAction="#buyThirdItem" id="button_thirdItem" fx:id="button_thirdItem" layoutX="497.0" layoutY="463.0" mnemonicParsing="false" text="Buy">
          <font>
             <Font size="30.0" />
          </font>

@@ -16,7 +16,6 @@ public class MapGenerator {
     LeftRight leftRight;
     CheckStats checkStats;  //one exit road
     BreakTime breakTime; // one exit road
-    ChestCheck chestCheck; //one exit road
     HealthChamber healthChamber;
     MonsterChamber monsterChamber;
     TraderChamber traderChamber;
@@ -36,7 +35,6 @@ public class MapGenerator {
          leftRight = new LeftRight(game);
          checkStats = new CheckStats(game); //one exit road
          breakTime = new BreakTime(game); // one exit road
-         chestCheck = new ChestCheck(game); //one exit road
          healthChamber = new HealthChamber(game);
          monsterChamber = new MonsterChamber(game);
          traderChamber = new TraderChamber(game);
@@ -51,7 +49,7 @@ public class MapGenerator {
 
     public void prepareMap(){
         // first map:
-        maps[0][0] = chestCheck;
+        maps[0][0] = food;
         maps[0][1] = monsterChamber;
         maps[0][2] = food;
         maps[0][3] = empty;
@@ -77,20 +75,20 @@ public class MapGenerator {
         maps[0][8].option1 = maps[0][8];
 
         // second map :
-        maps[1][0] = trapChamber;
-        maps[1][1] = chestCheck;
+        maps[1][1] = trapChamber;
+        maps[1][0] = chestAfterOpen;
         maps[1][2] = food;
         maps[1][3] = empty;
         maps[1][4] = food;
         maps[1][5] = monsterChamber;
-        maps[1][6] = chestCheck;
+        maps[1][6] = chestAfterOpen;
         maps[1][7] = monsterChamber;
         maps[1][8] = trapChamber;
         maps[1][9] = food;
-        maps[1][10] = chestCheck;
+        maps[1][10] = chestAfterOpen;
         maps[1][11] = empty;
         maps[1][12] = traderChamber;
-        maps[1][13] = chestCheck;
+        maps[1][13] = chestAfterOpen;
         maps[1][14] = food;
         maps[1][15] = monsterChamber;
         maps[1][16] = monsterChamber;
@@ -133,9 +131,9 @@ public class MapGenerator {
         maps[1][19].option1 = maps[1][19];
 
         // third map :
-        maps[2][0] = chestCheck;
+        maps[2][0] = chestAfterOpen;
         maps[2][1] = food;
-        maps[2][2] = chestCheck;
+        maps[2][2] = chestAfterOpen;
         maps[2][3] = empty;
         maps[2][4] = food;
         maps[2][5] = monsterChamber;
@@ -143,13 +141,13 @@ public class MapGenerator {
         maps[2][7] = healthChamber;
         maps[2][8] = trapChamber;
         maps[2][9] = monsterChamber;
-        maps[2][10] = chestCheck;
+        maps[2][10] = chestAfterOpen;
         maps[2][11] = traderChamber;
         maps[2][12] = monsterChamber;
         maps[2][13] = healthChamber;
         maps[2][14] = food;
         maps[2][15] = empty;
-        maps[2][16] = chestCheck;
+        maps[2][16] = chestAfterOpen;
         maps[2][17] = healthChamber;
         maps[2][18] = trapChamber;
         maps[2][19] = boss;
@@ -193,7 +191,7 @@ public class MapGenerator {
         maps[3][2] = monsterChamber;
         maps[3][3] = empty;
         maps[3][4] = monsterChamber;
-        maps[3][5] = chestCheck;
+        maps[3][5] = chestAfterOpen;
         maps[3][6] = monsterChamber;
         maps[3][7] = monsterChamber;
         maps[3][8] = trapChamber;
@@ -203,7 +201,7 @@ public class MapGenerator {
         maps[3][12] = traderChamber;
         maps[3][13] = empty;
         maps[3][14] = food;
-        maps[3][15] = chestCheck;
+        maps[3][15] = chestAfterOpen;
         maps[3][16] = monsterChamber;
         maps[3][17] = healthChamber;
         maps[3][18] = trapChamber;
@@ -249,7 +247,7 @@ public class MapGenerator {
         maps[4][3] = food;
         maps[4][4] = monsterChamber;
         maps[4][5] = monsterChamber;
-        maps[4][6] = chestCheck;
+        maps[4][6] = chestAfterOpen;
         maps[4][7] = traderChamber;
         maps[4][8] = trapChamber;
         maps[4][9] = monsterChamber;

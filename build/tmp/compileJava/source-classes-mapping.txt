@@ -4,32 +4,12 @@ Models/Character/profiles.java
  Models.Character.Observer
  Models.Character.Scout
  Models.Character.Warrior
-Models/Character/Profession.java
- Models.Character.Profession
-Others/Names.java
- Others.Names
-Game/ButtonClickedObserver.java
- Game.ButtonClickedObserver
-Models/Character/Character.java
- Models.Character.Character
-Game/ChamberMediator.java
- Game.ChamberMediator
-Models/Character/CharacterClass.java
- Models.Character.CharacterClass
- Models.Character.CharacterClass$1
-Others/ItemType.java
- Others.ItemType
-Others/Equipment.java
- Others.Equipment
-Models/Character/Hero.java
- Models.Character.Hero
 Others/Item.java
  Others.Armor
  Others.Bow
  Others.Headgear
  Others.Helmet
  Others.Item
- Others.ItemFactory
  Others.MageTalisman
  Others.MagicHat
  Others.MagicStick
@@ -39,26 +19,49 @@ Others/Item.java
  Others.Talisman
  Others.WarriorTalisman
  Others.Weapon
+Others/Equipment.java
+ Others.Equipment
+Models/Character/CharacterClass.java
+ Models.Character.CharacterClass
+ Models.Character.CharacterClass$1
+Game/ButtonClickedObserver.java
+ Game.ButtonClickedObserver
+Models/Character/Profession.java
+ Models.Character.Profession
+Models/Character/Character.java
+ Models.Character.Character
+Game/ChamberMediator.java
+ Game.ChamberMediator
+Others/ItemType.java
+ Others.ItemType
+Others/Names.java
+ Others.Names
+Others/ItemFactory.java
+ Others.ItemFactory
+Models/Character/Hero.java
+ Models.Character.Hero
 Chambers/TraderChamber.java
  Chambers.TraderChamber
 Controllers/ChamberController.java
  Controllers.ChamberController
-Chambers/CheckStats.java
- Chambers.CheckStats
+Controllers/ChestAfterOpenController.java
+ Controllers.ChestAfterOpenController
+Controllers/TrapChamberController.java
+ Controllers.TrapChamberController
 Maps/MapGenerator.java
  Maps.MapGenerator
 Chambers/MonsterChamber.java
  Chambers.MonsterChamber
 Main.java
  Main
-Chambers/HealthChamber.java
- Chambers.HealthChamber
+Game/View.java
+ Game.View
 Chambers/BreakTime.java
  Chambers.BreakTime
 Controllers/ClassSelectController.java
  Controllers.ClassSelectController
-Chambers/ChestCheck.java
- Chambers.ChestCheck
+Controllers/TraderChamberController.java
+ Controllers.TraderChamberController
 Chambers/TrapChamber.java
  Chambers.TrapChamber
 Chambers/DiedChamber.java
@@ -77,6 +80,8 @@ Chambers/DungeonChamber.java
  Chambers.DungeonChamber
 Chambers/Boss.java
  Chambers.Boss
+Controllers/FoodFountainChamberController.java
+ Controllers.FoodFountainChamberController
 Controllers/MainMenuController.java
  Controllers.MainMenuController
 Chambers/FoodFountainChamber.java
@@ -85,7 +90,7 @@ Chambers/Chamber.java
  Chambers.Chamber
 Chambers/FightChamber.java
  Chambers.FightChamber
-Game/View.java
- Game.View
-Controllers/TrapChamberController.java
- Controllers.TrapChamberController
+Chambers/CheckStats.java
+ Chambers.CheckStats
+Chambers/HealthChamber.java
+ Chambers.HealthChamber

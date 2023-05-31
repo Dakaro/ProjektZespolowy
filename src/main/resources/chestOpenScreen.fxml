@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<Pane fx:controller="Controllers.ChamberController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="Controllers.ChestAfterOpenController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
@@ -22,7 +22,7 @@
             <Font size="33.0" />
          </font>
       </Text>
-      <Text id="amount_gold" fill="WHITE" layoutX="312.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Text id="amount_gold" fx:id="amountGold" fill="WHITE" layoutX="312.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font size="30.0" />
          </font>

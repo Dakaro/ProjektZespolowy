@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static Others.Names.*;
 
+
 public class Item {
     protected int item_ID;
     protected int value;
@@ -54,6 +55,11 @@ public class Item {
 
 
        // view->ShowOneItem(type, proff, item->getValue(), item->getName(), item->getMinDamage(), item->getMaxDamage(), item->getMainStat(), item->getMainStatName());
+    }
+
+    public static ItemType getRandomItemType(){
+        ItemType[] myArray = new ItemType[] {ItemType.WEAPON, ItemType.ARMOR, ItemType.SHIELD, ItemType.HEADGEAR, ItemType.TALISMAN};
+        return myArray[ ThreadLocalRandom.current().nextInt( myArray.length ) ];
     }
 
 };
@@ -286,58 +292,5 @@ protected double block_chance;
     public double getBlockChance() { return block_chance; }
 };
 
-class ItemFactory {
-    public static Item createItem(int level, ItemType type, Profession profession){
-        Item item = null;
-
-        if (type == ItemType.WEAPON)
-        {
-            if (profession == Profession.WARRIOR) {
-                item = new Sword(level);
-            }
-            else if (profession == Profession.SCOUT) {
-                item = new Bow(level);
-            }
-            else if (profession == Profession.MAGE) {
-                item = new MagicStick(level);
-            }
-        }
-        else if (type == ItemType.ARMOR)
-        {
-            item = new Armor(level);
-        }
-        else if (type == ItemType.HEADGEAR)
-        {
-            if (profession == Profession.WARRIOR) {
-                item = new Helmet(level);
-            }
-            else if (profession == Profession.SCOUT) {
-                item = new Helmet(level);
-            }
-            else if (profession == Profession.MAGE) {
-                item = new MagicHat(level);
-            }
-        }
-        else if (type == ItemType.TALISMAN)
-        {
-            if (profession == Profession.WARRIOR) {
-                item = new WarriorTalisman(level);
-            }
-            else if (profession == Profession.SCOUT) {
-                item = new ScoutTalisman(level);
-            }
-            else if (profession == Profession.MAGE) {
-                item = new MageTalisman(level);
-            }
-        }
-        else if (type == ItemType.SHIELD)
-        {
-            if (profession == Profession.WARRIOR)
-                item = new Shield(level);
-        }
-
-
-        return item;
-    }
-};
+;
 
