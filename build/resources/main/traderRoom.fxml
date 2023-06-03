@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane fx:controller="Controllers.TraderChamberController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TraderChamberController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
@@ -23,7 +22,7 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button onAction="#buyFirstItem" id="button_firstItem" fx:id="button_firstItem" layoutX="497.0" layoutY="62.0" mnemonicParsing="false" text="Buy">
+      <Button id="button_firstItem" fx:id="button_firstItem" layoutX="497.0" layoutY="62.0" mnemonicParsing="false" onAction="#buyFirstItem" text="Buy">
          <font>
             <Font size="30.0" />
          </font>
@@ -31,7 +30,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button onAction="#buySecondItem" fx:id="button_secondItem" layoutX="497.0" layoutY="268.0" mnemonicParsing="false" styleClass="button_secondItem" text="Buy">
+      <Button fx:id="button_secondItem" layoutX="497.0" layoutY="268.0" mnemonicParsing="false" onAction="#buySecondItem" styleClass="button_secondItem" text="Buy">
          <font>
             <Font size="30.0" />
          </font>
@@ -39,7 +38,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button onAction="#buyThirdItem" id="button_thirdItem" fx:id="button_thirdItem" layoutX="497.0" layoutY="463.0" mnemonicParsing="false" text="Buy">
+      <Button id="button_thirdItem" fx:id="button_thirdItem" layoutX="497.0" layoutY="463.0" mnemonicParsing="false" onAction="#buyThirdItem" text="Buy">
          <font>
             <Font size="30.0" />
          </font>
@@ -47,25 +46,25 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="184.0" layoutX="622.0" layoutY="14.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="243.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="184.0" layoutX="622.0" layoutY="204.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="243.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="193.0" layoutX="622.0" layoutY="399.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="243.0" />
-      <Text id="info_firstItem" fx:id="info_firstItem" fill="WHITE" layoutX="637.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info for first item" textAlignment="CENTER" wrappingWidth="212.13671875">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="184.0" layoutX="606.0" layoutY="14.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="243.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="184.0" layoutX="606.0" layoutY="208.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="243.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="193.0" layoutX="606.0" layoutY="399.0" opacity="0.7" stroke="BLACK" strokeType="INSIDE" width="243.0" />
+      <Text id="info_firstItem" fx:id="info_firstItem" fill="WHITE" layoutX="621.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info for first item" wrappingWidth="212.13671875">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text id="info_secondItem" fx:id="info_secondItem" fill="WHITE" layoutX="637.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info for second item" textAlignment="CENTER" wrappingWidth="212.13671875">
+      <Text id="info_secondItem" fx:id="info_secondItem" fill="WHITE" layoutX="621.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info for second item" wrappingWidth="212.13671875">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text id="info_thirdItem" fx:id="info_thirdItem" fill="WHITE" layoutX="637.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info for third item" textAlignment="CENTER" wrappingWidth="212.13671875">
+      <Text id="info_thirdItem" fx:id="info_thirdItem" fill="WHITE" layoutX="621.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info for third item" wrappingWidth="212.13671875">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Button onAction="#onOption1Clicked" id="button_getOut" fx:id="button_getOut" layoutX="14.0" layoutY="528.0" mnemonicParsing="false" text="Get out">
+      <Button id="button_getOut" fx:id="button_getOut" layoutX="14.0" layoutY="528.0" mnemonicParsing="false" onAction="#onOption1Clicked" text="Get out">
          <font>
             <Font size="30.0" />
          </font>

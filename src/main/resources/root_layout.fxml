@@ -8,177 +8,157 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane  fx:controller="Controllers.SceneController" dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.2838063439065108" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SceneController">
    <items>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+      <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="300.0" prefHeight="600.0" prefWidth="300.0">
          <children>
-            <Pane layoutY="-1.0" prefHeight="598.0" prefWidth="354.0" style="-fx-background-color: black;">
+            <Pane layoutY="-1.0" prefHeight="600.0" prefWidth="300.0" style="-fx-background-color: black;">
                <children>
-                  <ScrollPane id="menu_info" fx:id="menu_info" layoutX="13.0" layoutY="14.0" prefHeight="576.0" prefWidth="328.0">
+                  <ScrollPane id="menu_info" fx:id="menu_info" fitToWidth="true" layoutX="13.0" layoutY="14.0" prefHeight="580.0" prefWidth="280.0">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" opacity="0.71" prefHeight="1031.0" prefWidth="327.0" style="-fx-background-color: black;">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" opacity="0.71" prefHeight="1130.0" prefWidth="300.0" style="-fx-background-color: black;">
                            <children>
                               <Label layoutX="14.0" layoutY="22.0" prefHeight="17.0" prefWidth="152.0" text="Equipment" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="12.0" layoutY="454.0" text="Statistics" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="729.0" text="Statistics" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Text id="first_text_eq" fx:id="first_text_eq" fill="WHITE" layoutX="14.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="first_text_eq" wrappingWidth="304.13671875">
+                              <Text id="first_text_eq" fx:id="first_text_eq" fill="WHITE" layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="first_text_eq" wrappingWidth="304.13671875">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="fourth_text_eq" fx:id="fourth_text_eq" fill="WHITE" layoutX="13.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fourth_text_eq" wrappingWidth="301.13671875">
+                              <Text id="fourth_text_eq" fx:id="fourth_text_eq" fill="WHITE" layoutX="14.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fourth_text_eq" wrappingWidth="301.13671875">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="third_text_eq" fx:id="third_text_eq" fill="WHITE" layoutX="14.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="third_text_eq" wrappingWidth="302.13671875">
+                              <Text id="third_text_eq" fx:id="third_text_eq" fill="WHITE" layoutX="14.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="third_text_eq" wrappingWidth="302.13671875">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="second_text_eq" fx:id="second_text_eq" fill="WHITE" layoutX="12.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="second_text_eq" wrappingWidth="307.13671875">
+                              <Text id="second_text_eq" fx:id="second_text_eq" fill="WHITE" layoutX="14.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="second_text_eq" wrappingWidth="307.13671875">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="fifth_text_eq" fx:id="fifth_text_eq" fill="WHITE" layoutX="15.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fifth_text_eq" wrappingWidth="301.13671875">
+                              <Text id="fifth_text_eq" fx:id="fifth_text_eq" fill="WHITE" layoutX="14.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fifth_text_eq" wrappingWidth="301.13671875">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Label layoutX="14.0" layoutY="500.0" text="Name" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="760.0" text="Name" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="560.0" text="Profession" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="820.0" text="Profession" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="620.0" text="Main Stat" textFill="WHITE">
+                              <Label layoutX="150.0" layoutY="760.0" text="Level" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="680.0" text="Ability" textFill="WHITE">
+                              <Label layoutX="150.0" layoutY="820.0" text="Max Health" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="170.0" layoutY="500.0" text="Level" textFill="WHITE">
+                              <Label layoutX="150.0" layoutY="880.0" text="Current Health" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="170.0" layoutY="560.0" text="Max Health" textFill="WHITE">
+                              <Label layoutX="150.0" layoutY="940.0" text="Minimal Attack" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="170.0" layoutY="620.0" text="Current Health" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="940.0" text="Defense" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="170.0" layoutY="680.0" text="Minimal Attack" textFill="WHITE">
+                              <Label layoutX="150.0" layoutY="1000.0" text="Maximal Attack" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="14.0" layoutY="800.0" text="Defense" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="880.0" text="Money" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="170.0" layoutY="740.0" text="Maximal Attack" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="1060.0" text="Critical Chance" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="15.0" layoutY="740.0" text="Money" textFill="WHITE">
+                              <Label layoutX="14.0" layoutY="1000.0" text="Block Chance" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="170.0" layoutY="800.0" text="Critical Chance" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="14.0" layoutY="860.0" text="Block Chance" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Text fx:id="name_stats" fill="WHITE" layoutX="14.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name_stats">
+                              <Text fx:id="name_stats" fill="WHITE" layoutX="14.0" layoutY="805.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="profession_stats" fx:id="profession_stats" fill="WHITE" layoutX="14.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="profession_stats">
+                              <Text id="profession_stats" fx:id="profession_stats" fill="WHITE" layoutX="14.0" layoutY="865.0" strokeType="OUTSIDE" strokeWidth="0.0" text="profession_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="main_stats" fx:id="main_stats" fill="WHITE" layoutX="14.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="main_stats">
+                              <Text id="money_stats" fx:id="money_stats" fill="WHITE" layoutX="14.0" layoutY="925.0" strokeType="OUTSIDE" strokeWidth="0.0" text="money_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="ability_stats" fx:id="ability_stats" fill="WHITE" layoutX="14.0" layoutY="725.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ability_stats">
+                              <Text id="defense_stats" fx:id="defense_stats" fill="WHITE" layoutX="14.0" layoutY="985.0" strokeType="OUTSIDE" strokeWidth="0.0" text="defense_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="money_stats" fx:id="money_stats" fill="WHITE" layoutX="14.0" layoutY="785.0" strokeType="OUTSIDE" strokeWidth="0.0" text="money_stats">
+                              <Text id="block_chance_stats" fx:id="block_chance_stats" fill="WHITE" layoutX="14.0" layoutY="1045.0" strokeType="OUTSIDE" strokeWidth="0.0" text="block_chance_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="defense_stats" fx:id="defense_stats" fill="WHITE" layoutX="14.0" layoutY="845.0" strokeType="OUTSIDE" strokeWidth="0.0" text="defense_stats">
+                              <Text id="level_stats" fx:id="level_stats" fill="WHITE" layoutX="150.0" layoutY="805.0" strokeType="OUTSIDE" strokeWidth="0.0" text="level">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="block_chance_stats" fx:id="block_chance_stats" fill="WHITE" layoutX="14.0" layoutY="905.0" strokeType="OUTSIDE" strokeWidth="0.0" text="block_chance_stats">
+                              <Text id="max_health_stats" fx:id="max_health_stats" fill="WHITE" layoutX="150.0" layoutY="865.0" strokeType="OUTSIDE" strokeWidth="0.0" text="max_health_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="level_stats" fx:id="level_stats" fill="WHITE" layoutX="170.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="level">
+                              <Text id="curr_health_stats" fx:id="curr_health_stats" fill="WHITE" layoutX="150.0" layoutY="925.0" strokeType="OUTSIDE" strokeWidth="0.0" text="curr_health_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="max_health_stats" fx:id="max_health_stats" fill="WHITE" layoutX="170.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="max_health_stats">
+                              <Text id="min_attack_stats" fx:id="min_attack_stats" fill="WHITE" layoutX="150.0" layoutY="985.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min_attack_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="curr_health_stats" fx:id="curr_health_stats" fill="WHITE" layoutX="170.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="curr_health_stats">
+                              <Text id="max_attack_stats" fx:id="max_attack_stats" fill="WHITE" layoutX="150.0" layoutY="1045.0" strokeType="OUTSIDE" strokeWidth="0.0" text="max_attack_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <Text id="min_attack_stats" fx:id="min_attack_stats" fill="WHITE" layoutX="170.0" layoutY="725.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min_attack_stats">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text id="max_attack_stats" fx:id="max_attack_stats" fill="WHITE" layoutX="170.0" layoutY="785.0" strokeType="OUTSIDE" strokeWidth="0.0" text="max_attack_stats">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text id="crit_chance_stats" fx:id="crit_chance_stats" fill="WHITE" layoutX="170.0" layoutY="845.0" strokeType="OUTSIDE" strokeWidth="0.0" text="crit_chance_stats">
+                              <Text id="crit_chance_stats" fx:id="crit_chance_stats" fill="WHITE" layoutX="14.0" layoutY="1105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="crit_chance_stats">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -190,6 +170,6 @@
                </children>
             </Pane>
          </children></AnchorPane>
-      <AnchorPane fx:id="mainPane" minHeight="0.0" minWidth="0.0" prefHeight="601.0" prefWidth="838.0" />
+      <AnchorPane fx:id="mainPane" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="900.0" />
    </items>
 </SplitPane>
