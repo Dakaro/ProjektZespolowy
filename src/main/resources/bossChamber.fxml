@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.Cursor?>
-<Pane fx:controller="Controllers.BossController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BossController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
@@ -26,7 +26,7 @@
               </font>
           </Text>
       </ScrollPane>
-       <Button  id="buttonFinish" fx:id="buttonFinish" layoutX="100.0" layoutY="180.0" mnemonicParsing="false" onAction="#finish" prefHeight="65.0" prefWidth="199.0" text="Finish">
+       <Button id="buttonFinish" fx:id="buttonFinish" layoutX="488.0" layoutY="383.0" mnemonicParsing="false" onAction="#finish" prefHeight="65.0" prefWidth="199.0" text="Finish">
            <font>
                <Font size="30.0" />
            </font>

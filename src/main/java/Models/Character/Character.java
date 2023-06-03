@@ -80,6 +80,7 @@ public  abstract class Character {
 
     public void setCriticalChance(double criticalChance){
         this.criticalChance = criticalChance;
+        this.criticalChanceProp.setValue( criticalChance );
     }
 
     public int getMaxHealth(){

@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BossController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BossController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0">
          <image>
             <Image url="@graphics/bossScreen.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="533.0" layoutX="517.0" layoutY="29.0" stroke="BLACK" strokeType="INSIDE" style="-fx-opacity: 0.5;" width="370.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="533.0" layoutX="49.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" style="-fx-opacity: 0.5;" width="334.0" />
 
-      <ScrollPane layoutX="534.0" layoutY="43.0" prefHeight="504.0" prefWidth="334.0">
+      <ScrollPane layoutX="49.0" layoutY="43.0" prefHeight="504.0" prefWidth="334.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="330.0" />
         </content>
@@ -29,7 +26,7 @@
               </font>
           </Text>
       </ScrollPane>
-       <Button id="buttonFinish" fx:id="buttonFinish" layoutX="100.0" layoutY="180.0" mnemonicParsing="false" onAction="#finish" prefHeight="65.0" prefWidth="199.0" text="Finish">
+       <Button id="buttonFinish" fx:id="buttonFinish" layoutX="488.0" layoutY="383.0" mnemonicParsing="false" onAction="#finish" prefHeight="65.0" prefWidth="199.0" text="Finish">
            <font>
                <Font size="30.0" />
            </font>

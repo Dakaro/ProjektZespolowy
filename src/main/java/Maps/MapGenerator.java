@@ -21,6 +21,7 @@ public class MapGenerator {
     Chamber[][] maps = new Chamber[5][20];
 
     public MapGenerator(Game game){
+        game = game;
          win = new WinChamber(game);
          died = new DiedChamber(game);
          food = new FoodFountainChamber(game);
@@ -41,24 +42,21 @@ public class MapGenerator {
         // first map:
         maps[0][0] = food;
         maps[0][1] = monsterChamber;
-        maps[0][2] = food;
-        maps[0][3] = empty;
-        maps[0][5] = empty;
-        maps[0][6] = trapChamber;
-        maps[0][7] = traderChamber;
-        maps[0][8] = boss;
+        maps[0][2] = chestAfterOpen;
+        maps[0][3] = leftRight;
+        maps[0][4] = empty;
+        maps[0][5] = trapChamber;
+        maps[0][6] = traderChamber;
+        maps[0][7] = boss;
 
-        maps[0][0].option1 = maps[0][8];
-        maps[0][0].option2 = maps[0][2];
-        maps[0][1].option1 = maps[0][3];
-        maps[0][2].option1 = maps[0][7];
-        maps[0][2].option2 = maps[0][3];
-        maps[0][3].option1 = maps[0][5];
-        maps[0][5].option2 = maps[0][6];
+        maps[0][0].option1 = maps[0][1];
+        maps[0][0].option1 = maps[0][2];
+        maps[0][2].option1 = maps[0][4];
+        maps[0][3].option1 = maps[0][2];
+        maps[0][4].option1 = maps[0][5];
+        maps[0][4].option2 = maps[0][6];
+        maps[0][5].option1 = maps[0][6];
         maps[0][6].option1 = maps[0][7];
-        maps[0][7].option1 = maps[0][8];
-        maps[0][7].option2 = maps[0][8];
-        maps[0][8].option1 = maps[0][8];
 
         /*
         // second map :

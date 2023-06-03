@@ -111,9 +111,7 @@ public class Hero extends Character {
             headgearInfo = ( "type: " + type + "\n" +
                     "name: " + name + "\n" +
                     "value: " + value + "\n" +
-                    "defence: " + val1 + "\n" +
-                    "mainStat: " + val2 + "\n" +
-                    "mainStatName: " + mainStat + "\n" );
+                    "defence: " + val1 + "\n");
             return headgearInfo;
         }
 

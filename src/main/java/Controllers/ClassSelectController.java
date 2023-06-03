@@ -31,6 +31,10 @@ public class ClassSelectController {
     public void setClass(Event event) {
         String name = String.valueOf( inputName.getCharacters() );
 
+        if( name.equals("") ){
+            name = "Dawid";
+        }
+
         if( event.getTarget() == buttonMage ){
             observer.onSelectButton(Profession.MAGE, name );
         }

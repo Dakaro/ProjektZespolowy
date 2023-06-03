@@ -9,9 +9,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -57,11 +57,12 @@ public class ChestAfterOpenController extends ChamberController implements Initi
     private Text itemsInfo;
 
     @FXML
-    private Button buttonReplaceItem;
+    private Button buttonReplace;
 
     public void replaceItem(){
         Item item = currentChamber.getFoundItem();
         myHero.changeEQ(item);
+        buttonReplace.setDisable( true );
     }
 
     private StringProperty amountGoldText = new SimpleStringProperty();

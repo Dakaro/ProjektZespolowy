@@ -1,6 +1,10 @@
 package Controllers;
 
 import Models.Character.Hero;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.StringBinding;
+import javafx.beans.property.DoubleProperty;
+import javafx.css.converter.StringConverter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -83,23 +87,36 @@ public class SceneController {
     private Text fifth_text_eq;
 
     private void bindLabelsToPlayerStats() {
+        StringBinding criticalChanceBinding = Bindings.createStringBinding(
+                () -> String.format("%.2f", myHero.criticalChanceProp.getValue()),
+                myHero.criticalChanceProp
+        );
+
+        StringBinding blockChanceBinding = Bindings.createStringBinding(
+                () -> String.format("%.2f", myHero.blockChanceProp.getValue()),
+                myHero.blockChanceProp
+        );
+
         name_stats.textProperty().bind(myHero.nameProp);
         level_stats.textProperty().bind(myHero.levelProp.asString());
         money_stats.textProperty().bind(myHero.moneyProp.asString());
         defense_stats.textProperty().bind(myHero.defenseProp.asString());
-        block_chance_stats.textProperty().bind(myHero.blockChanceProp.asString());
+        block_chance_stats.textProperty().bind(blockChanceBinding);
         max_health_stats.textProperty().bind(myHero.maxHealthProp.asString());
         curr_health_stats.textProperty().bind(myHero.currentHealthProp.asString());
         min_attack_stats.textProperty().bind(myHero.minimalAttackProp.asString());
         max_attack_stats.textProperty().bind(myHero.maximalAttackProp.asString());
-        crit_chance_stats.textProperty().bind(myHero.criticalChanceProp.asString());
+        crit_chance_stats.textProperty().bind(criticalChanceBinding);
         profession_stats.textProperty().bind(myHero.profProp);
         first_text_eq.textProperty().bind(myHero.weaponProp);
         second_text_eq.textProperty().bind(myHero.talismanProp);
         third_text_eq.textProperty().bind(myHero.shieldProp);
         fourth_text_eq.textProperty().bind(myHero.armorProp);
         fifth_text_eq.textProperty().bind(myHero.headgearProp);
+
+
     }
+
 
 
 }
