@@ -3,6 +3,7 @@ package Controllers;
 import Chambers.Chamber;
 import Chambers.ChestAfterOpen;
 import Game.Game;
+import Models.Character.Hero;
 import Others.Item;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -10,17 +11,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ChestAfterOpenController extends ChamberController implements Initializable {
 
     ChestAfterOpen currentChamber;
+    Hero myHero;
 
     @Override
     public void setChamber(Chamber chamber) {
         super.setChamber(chamber);
         currentChamber = (ChestAfterOpen)chamber;
+        myHero = currentChamber.getHero();
         updateChestInfoText();
     }
 
@@ -52,6 +56,14 @@ public class ChestAfterOpenController extends ChamberController implements Initi
     @FXML
     private Text itemsInfo;
 
+    @FXML
+    private Button buttonReplaceItem;
+
+    public void replaceItem(){
+        Item item = currentChamber.getFoundItem();
+        myHero.changeEQ(item);
+    }
+
     private StringProperty amountGoldText = new SimpleStringProperty();
     private StringProperty itemInfoText = new SimpleStringProperty();
 
@@ -68,7 +80,7 @@ public class ChestAfterOpenController extends ChamberController implements Initi
 
     private void updateChestInfoText() {
         Item item = currentChamber.getFoundItem();
-        String foundItemInfo = "Name: " + item.getName() + "\n value: " + Integer.toString( item.getValue() );
+        String foundItemInfo = myHero.showOneItem(item.getType(), myHero.getProf() ) ;
         amountGold.setText( Integer.toString( currentChamber.getFoundGold() ) );
         itemsInfo.setText( foundItemInfo );
 

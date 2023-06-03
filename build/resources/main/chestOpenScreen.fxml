@@ -38,7 +38,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button id="button__replaceItem" fx:id="buttonReplaceItem" layoutX="345.0" layoutY="235.0" mnemonicParsing="false" text="Replace item">
+      <Button id="button__replaceItem" fx:id="buttonReplaceItem" onAction="#replaceItem" layoutX="345.0" layoutY="235.0" mnemonicParsing="false" text="Replace item">
          <font>
             <Font size="30.0" />
          </font>

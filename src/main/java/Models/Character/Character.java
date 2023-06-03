@@ -1,6 +1,11 @@
 package Models.Character;
 
+import javafx.beans.property.*;
+
 import java.util.concurrent.ThreadLocalRandom;
+
+import static Others.Names.chance;
+import static Others.Names.dodge;
 
 public  abstract class Character {
     int defaultHealth = 50;
@@ -25,6 +30,17 @@ public  abstract class Character {
     protected String name;
     protected double criticalChance;
     protected CharacterClass character;
+
+    public IntegerProperty minimalAttackProp = new SimpleIntegerProperty();
+    public IntegerProperty maximalAttackProp = new SimpleIntegerProperty();
+    public IntegerProperty levelProp = new SimpleIntegerProperty();
+    public IntegerProperty currentHealthProp = new SimpleIntegerProperty();
+    public IntegerProperty maxHealthProp = new SimpleIntegerProperty();
+    public IntegerProperty defenseProp = new SimpleIntegerProperty();
+    public DoubleProperty blockChanceProp = new SimpleDoubleProperty();
+    public DoubleProperty criticalChanceProp = new SimpleDoubleProperty();
+    public StringProperty nameProp = new SimpleStringProperty();
+    public StringProperty profProp = new SimpleStringProperty();
 
     public  Character(){};
 
@@ -55,6 +71,7 @@ public  abstract class Character {
             health = this.getMaxHealth();
         }
         this.currentHealth = (int) health;
+        this.currentHealthProp.setValue(this.currentHealth);
     }
 
     public double getCriticalChance(){
@@ -103,23 +120,51 @@ public  abstract class Character {
     abstract void setName();
 
    public int useSpecialAttack(){
-        //later
-       return 0;
+       if (chance() <= this.getCriticalChance())
+       {
+           return 2;
+       }
+       return 1;
     }
 
     public Profession getProf(){
         return this.character.getProf();
     }
 
-    boolean useSpecialEffect(Character opponent){
-       return true;
+    String useSpecialEffect(Character opponent){
+       String fightStatus = "";
+        if (this.character.getProf() == Profession.MAGE || opponent.character.getProf() == Profession.MAGE)
+        {
+            return  " ";
+        }
+        if (opponent.character.getProf() == Profession.SCOUT)
+        {
+            if ( ThreadLocalRandom.current().nextInt(1, 100) <= dodge)
+            {
+                fightStatus = fightStatus + "\n" + opponent.getName() + " dodged the hit from " + this.getName();
+                return  fightStatus;
+            }
+            return " ";
+        }
+        if (opponent.character.getProf() == Profession.WARRIOR)
+        {
+            if ( ThreadLocalRandom.current().nextInt(1, 100) <= opponent.getBlockChance())
+            {
+                fightStatus =  "\n" + opponent.getName() + " blocked the hit from " + this.getName();
+                return fightStatus;
+            }
+            return " ";
+        }
+        return " ";
     }
 
 
-    void attackOpponent(Character opponent){
-        if (!this.useSpecialEffect(opponent))
+    String attackOpponent(Character opponent, String status){
+       String fightStatus = "";
+       fightStatus =  this.useSpecialEffect(opponent);
+        if ( !fightStatus.equals(" ") )
         {
-            return;
+            return fightStatus;
         }
         int damage = ThreadLocalRandom.current().nextInt(this.getMinimalAttack(), this.getMaximalAttack());
         damage = damage * this.useSpecialAttack() - opponent.getDefence();
@@ -127,6 +172,10 @@ public  abstract class Character {
             damage = 1;
 
         opponent.getDamage(damage);
+
+        fightStatus = "\n" + this.getName() + " dealt " + damage + " damage to " + opponent.getName();
+
+        return fightStatus;
     }
 
 }

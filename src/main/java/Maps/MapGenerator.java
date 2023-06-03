@@ -7,21 +7,16 @@ public class MapGenerator {
 
     Game game;
 
-    WinChamber win;
-    DiedChamber died;
-    FoodFountainChamber food;
-    FightChamber fight;
-    DungeonChamber dungeon;
-    EmptyRoom empty;
+    WinChamber win; // no exit, please do not set option1 and option2
+    DiedChamber died; // no exit, please do not set option1 and option2
+    FoodFountainChamber food; // one exit
     LeftRight leftRight;
-    CheckStats checkStats;  //one exit road
-    BreakTime breakTime; // one exit road
-    HealthChamber healthChamber;
-    MonsterChamber monsterChamber;
-    TraderChamber traderChamber;
-    TrapChamber trapChamber;  //one exit road
-    ChestAfterOpen chestAfterOpen;  // one exit road
-    Boss boss;
+    MonsterChamber monsterChamber; // one exit
+    TraderChamber traderChamber; // one exit
+    Boss boss; // no exit, please do not set option1 and option2
+    EmptyRoom empty;   /// one exit
+    TrapChamber trapChamber;  //one exit
+    ChestAfterOpen chestAfterOpen;  // one exit
 
     Chamber[][] maps = new Chamber[5][20];
 
@@ -29,17 +24,12 @@ public class MapGenerator {
          win = new WinChamber(game);
          died = new DiedChamber(game);
          food = new FoodFountainChamber(game);
-         fight = new FightChamber(game);
-         dungeon = new DungeonChamber(game);
          empty = new EmptyRoom(game);
          leftRight = new LeftRight(game);
-         checkStats = new CheckStats(game); //one exit road
-         breakTime = new BreakTime(game); // one exit road
-         healthChamber = new HealthChamber(game);
          monsterChamber = new MonsterChamber(game);
          traderChamber = new TraderChamber(game);
-         trapChamber = new TrapChamber(game); //one exit road
-         chestAfterOpen = new ChestAfterOpen(game); // one exit road
+         trapChamber = new TrapChamber(game);
+         chestAfterOpen = new ChestAfterOpen(game);
          boss = new Boss(game);
     }
 
@@ -53,27 +43,24 @@ public class MapGenerator {
         maps[0][1] = monsterChamber;
         maps[0][2] = food;
         maps[0][3] = empty;
-        maps[0][4] = healthChamber;
         maps[0][5] = empty;
         maps[0][6] = trapChamber;
         maps[0][7] = traderChamber;
         maps[0][8] = boss;
 
-        maps[0][0].option1 = maps[0][1];
+        maps[0][0].option1 = maps[0][8];
         maps[0][0].option2 = maps[0][2];
-        maps[0][1].option1 = maps[0][2];
-        maps[0][2].option1 = maps[0][1];
+        maps[0][1].option1 = maps[0][3];
+        maps[0][2].option1 = maps[0][7];
         maps[0][2].option2 = maps[0][3];
         maps[0][3].option1 = maps[0][5];
-        maps[0][3].option2 = maps[0][4];
-        maps[0][4].option1 = maps[0][5];
-        maps[0][5].option1 = maps[0][4];
         maps[0][5].option2 = maps[0][6];
         maps[0][6].option1 = maps[0][7];
-        maps[0][7].option1 = maps[0][6];
+        maps[0][7].option1 = maps[0][8];
         maps[0][7].option2 = maps[0][8];
         maps[0][8].option1 = maps[0][8];
 
+        /*
         // second map :
         maps[1][1] = trapChamber;
         maps[1][0] = chestAfterOpen;
@@ -92,7 +79,6 @@ public class MapGenerator {
         maps[1][14] = food;
         maps[1][15] = monsterChamber;
         maps[1][16] = monsterChamber;
-        maps[1][17] = healthChamber;
         maps[1][18] = food;
         maps[1][19] = boss;
 
@@ -138,17 +124,14 @@ public class MapGenerator {
         maps[2][4] = food;
         maps[2][5] = monsterChamber;
         maps[2][6] = monsterChamber;
-        maps[2][7] = healthChamber;
         maps[2][8] = trapChamber;
         maps[2][9] = monsterChamber;
         maps[2][10] = chestAfterOpen;
         maps[2][11] = traderChamber;
         maps[2][12] = monsterChamber;
-        maps[2][13] = healthChamber;
         maps[2][14] = food;
         maps[2][15] = empty;
         maps[2][16] = chestAfterOpen;
-        maps[2][17] = healthChamber;
         maps[2][18] = trapChamber;
         maps[2][19] = boss;
 
@@ -203,7 +186,6 @@ public class MapGenerator {
         maps[3][14] = food;
         maps[3][15] = chestAfterOpen;
         maps[3][16] = monsterChamber;
-        maps[3][17] = healthChamber;
         maps[3][18] = trapChamber;
         maps[3][19] = boss;
 
@@ -252,7 +234,6 @@ public class MapGenerator {
         maps[4][8] = trapChamber;
         maps[4][9] = monsterChamber;
         maps[4][10] = monsterChamber;
-        maps[4][11] = healthChamber;
         maps[4][12] = monsterChamber;
         maps[4][13] = monsterChamber;
         maps[4][14] = food;
@@ -292,6 +273,8 @@ public class MapGenerator {
         maps[4][17].option2 = maps[4][18];
         maps[4][18].option1 = maps[4][19];
         maps[4][19].option1 = maps[4][19];
+
+         */
     }
 }
 

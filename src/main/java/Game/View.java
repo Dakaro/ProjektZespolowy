@@ -2,9 +2,12 @@ package Game;
 
 import Chambers.Chamber;
 import Controllers.*;
+import Models.Character.Hero;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,24 +16,18 @@ public class View{
 
    private Stage stage;
 
+   SceneController sceneController;
 
    public View(Stage stage){
        this.stage = stage;
    }
 
-   /*FXMLLoader getLoader(){
-       return loader;
-   }
+   public FXMLLoader loadMenuScene(String path){
+       FXMLLoader loader = new FXMLLoader();
 
-    */
-
-   private FXMLLoader loadRoom(String path )  {
-        FXMLLoader loader = new FXMLLoader();
-
-        Parent root = null;
-        Scene scene;
+       Parent root = null;
+       Scene scene;
        loader.setLocation(getClass().getResource(path));
-      // Parent pane = null;
        try {
            root = loader.load();
        } catch (IOException e) {
@@ -38,129 +35,108 @@ public class View{
        }
 
        scene = new Scene(root);
-       stage.setScene(scene);
-       stage.show();
+       this.stage.setScene(scene);
+       this.stage.show();
 
        return loader;
    }
 
-   public void loadStartRoom(Game game){
-      FXMLLoader myLoader = loadRoom("/_mainMenuScreen.fxml");
+   public void loadStartRoom(Game game, Stage stage){
+      FXMLLoader myLoader = loadMenuScene("/_mainMenuScreen.fxml");
        MainMenuController myController = myLoader.getController();
        myController.setObserver(game);
+   }
 
+   public void loadMainScene(Game game, Stage stage){
+       FXMLLoader myLoader = loadMenuScene("/root_layout.fxml");
+       SceneController myController = myLoader.getController();
+       sceneController = myController;
+       myController.setMyStage(stage);
+       myController.setHero(game.getHero());
    }
 
    public void loadSelectClassRoom(Game game){
-       FXMLLoader myLoader = loadRoom("/_classSelectScreen.fxml");
+       FXMLLoader myLoader = loadMenuScene("/_classSelectScreen.fxml");
        ClassSelectController myController = myLoader.getController();
        myController.setObserver(game);
    }
 
    public void loadDungeon(Game game, Chamber chamber){
-       FXMLLoader myLoader = loadRoom("/dungeon.fxml");
+       FXMLLoader myLoader = sceneController.loadRoom("/dungeon.fxml");
        ChamberController myController = myLoader.getController();
        myController.setMediator(game);
        myController.setChamber(chamber);
    }
 
    public void loadFood(Game game, Chamber chamber){
-       FXMLLoader myLoader = loadRoom("/foodFountainScreen.fxml");
+       FXMLLoader myLoader = sceneController.loadRoom("/foodFountainScreen.fxml");
        ChamberController myController = myLoader.getController();
        myController.setMediator(game);
        myController.setChamber(chamber);
    }
 
-    public void loadFight(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/fightScreen.fxml");
-        ChamberController myController = myLoader.getController();
-        myController.setMediator(game);
-        myController.setChamber(chamber);
-    }
-
     public void loadWin(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/_winScreen.fxml");
+        FXMLLoader myLoader = sceneController.loadRoom("/_winScreen.fxml");
         ChamberController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
     public void loadDied(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/_diedScreen.fxml");
+        FXMLLoader myLoader = sceneController.loadRoom("/_diedScreen.fxml");
         ChamberController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
-    public void loadCheckStats(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/_checkStatsEqEnterDungScreen.fxml");
-        ChamberController myController = myLoader.getController();
-        myController.setMediator(game);
-        myController.setChamber(chamber);
-    }
 
     public void loadChestAfterOpen(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/chestOpenScreen.fxml");
+        FXMLLoader myLoader = sceneController.loadRoom("/chestOpenScreen.fxml");
         ChestAfterOpenController myController = (ChestAfterOpenController)myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
     public void loadEmpty(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/emptyRoom.fxml");
+        FXMLLoader myLoader = sceneController.loadRoom("/emptyRoom.fxml");
         ChamberController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
-    public void loadHealthChamber(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/healthRoom.fxml");
-        ChamberController myController = myLoader.getController();
-        myController.setMediator(game);
-        myController.setChamber(chamber);
-    }
 
     public void loadLeftRight(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/_leftRightScreen.fxml");
+        FXMLLoader myLoader = sceneController.loadRoom("/_leftRightScreen.fxml");
         ChamberController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
     public void loadMonsterChamber(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/monsterRoom.fxml");
-        ChamberController myController = myLoader.getController();
+        FXMLLoader myLoader = sceneController.loadRoom("/monsterRoom.fxml");
+        MonsterChamberController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
     public void loadTraderChamber(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/traderRoom.fxml");
+        FXMLLoader myLoader = sceneController.loadRoom("/traderRoom.fxml");
         TraderChamberController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
     public void loadTrapChamber(Game game, Chamber chamber){
-        FXMLLoader loader = loadRoom("/trapRoom.fxml");
+        FXMLLoader loader = sceneController.loadRoom("/trapRoom.fxml");
 
         TrapChamberController myController = (TrapChamberController) loader.getController();
-        myController.setMediator(game);
-        myController.setChamber(chamber);
-
-
-    }
-
-    public void loadBreak(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/breakTime.fxml");
-        ChamberController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }
 
     public void loadBoss(Game game, Chamber chamber){
-        FXMLLoader myLoader = loadRoom("/bossChamber.fxml");
-        ChamberController myController = myLoader.getController();
+        FXMLLoader myLoader = sceneController.loadRoom("/bossChamber.fxml");
+        BossController myController = myLoader.getController();
         myController.setMediator(game);
         myController.setChamber(chamber);
     }

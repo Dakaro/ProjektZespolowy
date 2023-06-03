@@ -3,41 +3,39 @@ package Models.Character;
 import Others.Equipment;
 import Others.Item;
 import Others.ItemType;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.util.List;
 
 public class Hero extends Character {
+
     public Hero getInstance() {
         return this;
     }
 
-    void showStatistics() {
-        int mainStat = this.EQ.weapon_slot.getMainStat() + this.EQ.headgear_slot.getMainStat() + this.character.getMainStat() + this.EQ.talisman_slot.getMainStat();
-        if (this.getProf() != null) {
-            /// do wyswietlenia
-            // TODO
-                /*view.ShowStatistics(this.getName(), this.Class.getProfName(), this.Class.getmainStatName(),
-                    this.character.getspecialAbility(), this.getlevel(), mainStat, this.getmaxHealth(),
-                    this.getcurrentHealth(), this.getminimalAttack(), this.getmaximalAttack(),
-                    this.getcriticalChance(), this.getdefense(), this.getMoney(), this.getBlockChance());
+    public StringProperty weaponProp = new SimpleStringProperty();
+    public StringProperty talismanProp = new SimpleStringProperty();
+    public StringProperty shieldProp = new SimpleStringProperty();
+    public StringProperty armorProp = new SimpleStringProperty();
+    public StringProperty headgearProp = new SimpleStringProperty();
 
-                 */
-        } else {
+    String weaponInfo;
+    String talismanInfo;
+    String shieldInfo;
+    String armorInfo;
+    String headgearInfo;
 
-        }
 
-    }
-
-    void showEQ() {
-        // show eq
-    }
-
-    void showOneItem(ItemType it, Profession p) {
+    public String showOneItem(ItemType it, Profession p) {
         int val1 = 0, val2 = 0, val3 = 0;
         String mainStat = "";
         String name = "";
         String type = "";
         int value = 0;
+
 
         if (it == ItemType.WEAPON) {
             type = "weapon";
@@ -47,6 +45,14 @@ public class Hero extends Character {
             val3 = this.EQ.weapon_slot.getMainStat();
             mainStat = this.EQ.weapon_slot.getMainStatName();
             value = this.EQ.weapon_slot.getValue();
+            weaponInfo = ( "type: " + type + "\n" +
+                            "name: " + name + "\n" +
+                            "value: " + value + "\n" +
+                            "minDamage: " + val1 + "\n" +
+                            "maxDamage: " + val2 + "\n" +
+                            "mainStat: " + val3 + "\n" +
+                            "mainStatName: " + mainStat + "\n" );
+            return weaponInfo;
         } else if (it == ItemType.TALISMAN) {
             type = "talisman";
             name = this.EQ.talisman_slot.getName();
@@ -54,18 +60,41 @@ public class Hero extends Character {
             val2 = (int) this.EQ.talisman_slot.getCriticalChance();
             mainStat = this.EQ.talisman_slot.getMainStatName();
             value = this.EQ.talisman_slot.getValue();
+
+            talismanInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "mainStat: " + val1 + "\n" +
+                    "criticalChance: " + val2 + "\n" +
+                    "mainStatName: " + mainStat + "\n" );
+            return talismanInfo;
         } else if (it == ItemType.SHIELD) {
             type = "shield";
             name = this.EQ.shield_slot.getName();
             val1 = this.EQ.shield_slot.getDefense();
             val2 = (int) this.EQ.shield_slot.getBlockChance();
             value = this.EQ.shield_slot.getValue();
+
+            shieldInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "defence: " + val1 + "\n" +
+                    "blockChance: " + val2 + "\n" );
+            return shieldInfo;
         } else if (it == ItemType.ARMOR) {
             type = "armor";
             name = this.EQ.armor_slot.getName();
             val1 = this.EQ.armor_slot.getDefense();
             val2 = this.EQ.armor_slot.getHealth();
             value = this.EQ.armor_slot.getValue();
+
+            armorInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "defence: " + val1 + "\n" +
+                    "health: " + val2 + "\n" );
+            return armorInfo;
+
         } else if (it == ItemType.HEADGEAR) {
             type = "headgear";
             name = this.EQ.headgear_slot.getName();
@@ -78,15 +107,17 @@ public class Hero extends Character {
                 val2 = this.EQ.headgear_slot.getHealth();
 
             value = this.EQ.headgear_slot.getValue();
+
+            headgearInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "defence: " + val1 + "\n" +
+                    "mainStat: " + val2 + "\n" +
+                    "mainStatName: " + mainStat + "\n" );
+            return headgearInfo;
         }
 
-        String proff;
-        if (p == Profession.WARRIOR)
-            proff = "Warrior";
-        else if (p == Profession.SCOUT)
-            proff = "Scout";
-        else if (p == Profession.MAGE)
-            proff = "Mage";
+        return "error";
     }
 
     void setAllStats() {
@@ -107,10 +138,13 @@ public class Hero extends Character {
             this.character = new Scout();
         else
             this.character = new Mage();
+
+        profProp.set( this.character.getProf().name() );
     }
 
     public void setMaxHealth(int h) {
         this.maxHealth = (this.getLevel() * defaultHealth + h) * this.character.getVitalityModifier();
+        maxHealthProp.setValue(this.maxHealth);
     }
 
     public void setDefense(int d) {
@@ -118,6 +152,7 @@ public class Hero extends Character {
             d += this.EQ.shield_slot.getDefense();
         }
         this.defense = d * this.character.getDefenseModifier();
+        defenseProp.setValue(this.defense);
     }
 
     @Override
@@ -135,18 +170,22 @@ public class Hero extends Character {
         if (this.getCurrentHealth() == 0) {
             this.Notify();
         }
+        currentHealthProp.setValue(this.currentHealth);
     }
 
     public void setLevel(int s) {
         this.level = s;
+        levelProp.setValue(s);
     }
 
     public void setMinimalAttack(int s) {
         this.minimalAttack = (s + defaultAttackMin * this.getLevel()) * this.character.getAttackModifier();
+        minimalAttackProp.setValue(this.minimalAttack);
     }
 
     public void setMaximalAttack(int s) {
         this.maximalAttack = (s + defaultAttackMax * this.getLevel()) * this.character.getAttackModifier();
+        maximalAttackProp.setValue(this.maximalAttack);
     }
 
     public void setAttack(int ms, int weaponMin, int weaponMax) {
@@ -156,10 +195,11 @@ public class Hero extends Character {
 
     public void setName(String n) {
         this.name = n;
+        nameProp.set(this.name);
     }
 
     public void levelup() {
-        this.level += 1;
+        setLevel(this.level + 1);
         this.setAllStats();
         this.setCurrentHealth(this.getCurrentHealth() + this.getMaxHealth() * 0.3);
     }
@@ -170,36 +210,46 @@ public class Hero extends Character {
         } else {
             this.blockChance = 0;
         }
+        blockChanceProp.setValue(this.blockChance);
     }
 
     public void setMoney(int m) {
         this.money = m;
+        moneyProp.setValue(this.money);
     }
 
     public int getMoney() {
         return this.money;
     }
 
-    public void ChangeEQ(Item i) {
-        this.EQ.ChangeItem(i);
+    public void changeEQ(Item it) {
+        this.EQ.ChangeItem(it);
         this.setAllStats();
+        weaponProp.set( this.showOneItem(ItemType.WEAPON, this.getProf() ) );
+        talismanProp.set( this.showOneItem(ItemType.TALISMAN, this.getProf() ) );
+        shieldProp.set( this.showOneItem(ItemType.SHIELD, this.getProf() ) );
+        headgearProp.set( this.showOneItem(ItemType.HEADGEAR, this.getProf() ) );
+        armorProp.set( this.showOneItem(ItemType.ARMOR, this.getProf() ) );
+
     }
 
-    public boolean fight(Character opponent, boolean boss) {
+    public String fight(Character opponent, String status) {
+        String fightStatus = status;
         boolean whoIsAttacking = true;
 
         while (this.getCurrentHealth() != 0 && opponent.getCurrentHealth() != 0) {
-            //view.BreakLine();
             if (whoIsAttacking) {
-                this.attackOpponent(opponent);
+
+                String temp = this.attackOpponent(opponent, fightStatus);
+                fightStatus = fightStatus + "\n" + temp ;
             } else {
                 Character h = this.getInstance();
-                opponent.attackOpponent(h);
+                String temp = opponent.attackOpponent(h, fightStatus);
+                fightStatus = fightStatus + "\n" + temp ;
             }
             whoIsAttacking = !whoIsAttacking;
         }
-        //view.BreakLine();
-        return this.getCurrentHealth() != 0;
+        return fightStatus;
     }
 
     public void AddObserver(Observer o) {
@@ -218,6 +268,13 @@ public class Hero extends Character {
         EQ = new Equipment(this.getLevel(), this.character.getProf());
         this.setAllStats();
         this.setCurrentHealth(this.getMaxHealth());
+
+        weaponProp.set( this.showOneItem(ItemType.WEAPON, this.getProf() ) );
+        talismanProp.set( this.showOneItem(ItemType.TALISMAN, this.getProf() ) );
+        shieldProp.set( this.showOneItem(ItemType.SHIELD, this.getProf() ) );
+        headgearProp.set( this.showOneItem(ItemType.HEADGEAR, this.getProf() ) );
+        armorProp.set( this.showOneItem(ItemType.ARMOR, this.getProf() ) );
+
     }
 
     @Override
@@ -237,5 +294,6 @@ public class Hero extends Character {
     private List<Observer> obs;
     private static Hero hero;
     private int money;
+    public IntegerProperty moneyProp = new SimpleIntegerProperty();
     public Equipment EQ;
 }

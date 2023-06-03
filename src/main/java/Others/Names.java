@@ -1,6 +1,8 @@
 package Others;
 
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Names {
     public final static String[] namesForMonsters = new String[] {"The Rainbow Mutant","The Crying Doll","The Icy Snake","The Night Worm","The Young Babbler","The Bruised Gorilla","The Venom Serpent"};
     public final static int sizeNamesForMonsters = 7;
@@ -15,7 +17,10 @@ public class Names {
     final static String[] namesForTalismans = new String[] {"The Ruby Promise","The Shadow Passion","The Jade Favor","The Faint Core","The Idle Bond","The Austere Soul","The Ruby Twin"};
     final static String[] namesForShields = new String[] { "Primal Tower Shield","Undead Heavy Shield","Wretched Heavy Shield","Ritual Tower Shield","Mercenary Shield","Bandit's Bronzed Shield","Demonic Glass Shield"};
     final static int namesTableSize = 7;
-    final static double dodge = 33.0;
+    public final static double dodge = 33.0;
+    public final static int chance(){
+        return ThreadLocalRandom.current().nextInt(1, 100);
+    }
 
 
 

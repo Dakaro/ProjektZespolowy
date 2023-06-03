@@ -12,9 +12,14 @@ import static Others.Item.getRandomItemType;
 import static Others.ItemFactory.createItem;
 
 public class ChestAfterOpen extends Chamber {
+    Hero myHero;
 
+    public Hero getHero(){
+        return myHero;
+    }
     public ChestAfterOpen(Game game){
         super(game);
+        myHero = game.getHero();
     }
 
     @Override
@@ -23,15 +28,13 @@ public class ChestAfterOpen extends Chamber {
     }
 
     public int getFoundGold(){
-        Hero myHero = this.game.getHero();
         int coins = ThreadLocalRandom.current().nextInt(0, myHero.getLevel() * 100 );
         myHero.setMoney(myHero.getMoney() + coins);
         return coins;
     }
 
     public Item getFoundItem(){
-        Hero myHero = this.game.getHero();
-        ItemType itemType = getRandomItemType();
+        ItemType itemType = getRandomItemType(myHero.getProf());
         Item item = createItem(myHero.getLevel(),itemType,  myHero.getProf() );
         return item;
     }

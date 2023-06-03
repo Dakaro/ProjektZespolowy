@@ -1,9 +1,36 @@
 Models/Character/profiles.java
  Models.Character.Mage
- Models.Character.Monster
  Models.Character.Observer
  Models.Character.Scout
  Models.Character.Warrior
+Controllers/BossController.java
+ Controllers.BossController
+Chambers/TraderChamber.java
+ Chambers.TraderChamber
+Controllers/ChamberController.java
+ Controllers.ChamberController
+Controllers/ChestAfterOpenController.java
+ Controllers.ChestAfterOpenController
+Controllers/TrapChamberController.java
+ Controllers.TrapChamberController
+Maps/MapGenerator.java
+ Maps.MapGenerator
+Models/Character/Monster.java
+ Models.Character.Monster
+Models/Character/Character.java
+ Models.Character.Character
+Chambers/MonsterChamber.java
+ Chambers.MonsterChamber
+Main.java
+ Main
+Game/View.java
+ Game.View
+Controllers/MonsterChamberController.java
+ Controllers.MonsterChamberController
+Controllers/SceneController.java
+ Controllers.SceneController
+Models/Character/Hero.java
+ Models.Character.Hero
 Others/Item.java
  Others.Armor
  Others.Bow
@@ -19,51 +46,14 @@ Others/Item.java
  Others.Talisman
  Others.WarriorTalisman
  Others.Weapon
-Others/Equipment.java
- Others.Equipment
-Models/Character/CharacterClass.java
- Models.Character.CharacterClass
- Models.Character.CharacterClass$1
-Game/ButtonClickedObserver.java
- Game.ButtonClickedObserver
-Models/Character/Profession.java
- Models.Character.Profession
-Models/Character/Character.java
- Models.Character.Character
-Game/ChamberMediator.java
- Game.ChamberMediator
-Others/ItemType.java
- Others.ItemType
-Others/Names.java
- Others.Names
-Others/ItemFactory.java
- Others.ItemFactory
-Models/Character/Hero.java
- Models.Character.Hero
-Chambers/TraderChamber.java
- Chambers.TraderChamber
-Controllers/ChamberController.java
- Controllers.ChamberController
-Controllers/ChestAfterOpenController.java
- Controllers.ChestAfterOpenController
-Controllers/TrapChamberController.java
- Controllers.TrapChamberController
-Maps/MapGenerator.java
- Maps.MapGenerator
-Chambers/MonsterChamber.java
- Chambers.MonsterChamber
-Main.java
- Main
-Game/View.java
- Game.View
-Chambers/BreakTime.java
- Chambers.BreakTime
 Controllers/ClassSelectController.java
  Controllers.ClassSelectController
 Controllers/TraderChamberController.java
  Controllers.TraderChamberController
 Chambers/TrapChamber.java
  Chambers.TrapChamber
+Others/ItemType.java
+ Others.ItemType
 Chambers/DiedChamber.java
  Chambers.DiedChamber
 Chambers/EmptyRoom.java
@@ -72,25 +62,32 @@ Chambers/WinChamber.java
  Chambers.WinChamber
 Game/Game.java
  Game.Game
+Models/Character/CharacterClass.java
+ Models.Character.CharacterClass
+ Models.Character.CharacterClass$1
+Models/Character/Profession.java
+ Models.Character.Profession
 Chambers/LeftRight.java
  Chambers.LeftRight
+Game/ButtonClickedObserver.java
+ Game.ButtonClickedObserver
 Chambers/ChestAfterOpen.java
  Chambers.ChestAfterOpen
-Chambers/DungeonChamber.java
- Chambers.DungeonChamber
+Others/ItemFactory.java
+ Others.ItemFactory
 Chambers/Boss.java
  Chambers.Boss
 Controllers/FoodFountainChamberController.java
  Controllers.FoodFountainChamberController
 Controllers/MainMenuController.java
  Controllers.MainMenuController
+Others/Names.java
+ Others.Names
 Chambers/FoodFountainChamber.java
  Chambers.FoodFountainChamber
+Game/ChamberMediator.java
+ Game.ChamberMediator
 Chambers/Chamber.java
  Chambers.Chamber
-Chambers/FightChamber.java
- Chambers.FightChamber
-Chambers/CheckStats.java
- Chambers.CheckStats
-Chambers/HealthChamber.java
- Chambers.HealthChamber
+Others/Equipment.java
+ Others.Equipment

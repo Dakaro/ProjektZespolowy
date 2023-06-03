@@ -13,6 +13,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
+        stage.setResizable( false );
+        stage.setMaximized( false );
         newGame.play(stage);
     }
 

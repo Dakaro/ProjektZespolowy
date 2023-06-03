@@ -57,9 +57,21 @@ public class Item {
        // view->ShowOneItem(type, proff, item->getValue(), item->getName(), item->getMinDamage(), item->getMaxDamage(), item->getMainStat(), item->getMainStatName());
     }
 
-    public static ItemType getRandomItemType(){
-        ItemType[] myArray = new ItemType[] {ItemType.WEAPON, ItemType.ARMOR, ItemType.SHIELD, ItemType.HEADGEAR, ItemType.TALISMAN};
-        return myArray[ ThreadLocalRandom.current().nextInt( myArray.length ) ];
+    public static ItemType getRandomItemType(Profession prof){
+
+        ItemType[] myArray;
+        if( prof == Profession.WARRIOR  ){
+            myArray = new ItemType[] {ItemType.WEAPON, ItemType.ARMOR, ItemType.SHIELD, ItemType.HEADGEAR, ItemType.TALISMAN};
+            return myArray[ ThreadLocalRandom.current().nextInt( myArray.length ) ];
+        } else if ( prof == Profession.SCOUT ){
+            myArray = new ItemType[] { ItemType.WEAPON, ItemType.ARMOR, ItemType.HEADGEAR, ItemType.TALISMAN };
+            return myArray[ ThreadLocalRandom.current().nextInt( myArray.length ) ];
+        } else if (prof == Profession.MAGE) {
+            myArray = new ItemType[]{ItemType.WEAPON, ItemType.ARMOR, ItemType.HEADGEAR, ItemType.TALISMAN};
+            return myArray[ThreadLocalRandom.current().nextInt(myArray.length)];
+        }
+
+        return ItemType.ARMOR;
     }
 
 };

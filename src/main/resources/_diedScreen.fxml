@@ -14,13 +14,5 @@
             <Image url="@graphics/youDied.png" />
          </image>
       </ImageView>
-      <Button id="button__exit" fx:id="buttonExit" layoutX="343.0" layoutY="410.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="215.0" text="Exit">
-         <font>
-            <Font size="30.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
    </children>
 </Pane>

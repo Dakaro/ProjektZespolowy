@@ -29,22 +29,17 @@ public class ClassSelectController {
 
     @FXML
     public void setClass(Event event) {
-        System.out.println( inputName.getCharacters() );
         String name = String.valueOf( inputName.getCharacters() );
-        System.out.println(event.getTarget() );
 
         if( event.getTarget() == buttonMage ){
-            System.out.println("MAG");
             observer.onSelectButton(Profession.MAGE, name );
         }
 
         if( event.getTarget() == buttonScout ){
-            System.out.println("Scout");
             observer.onSelectButton(Profession.SCOUT, name);
         }
 
         if( event.getTarget() == buttonWarrior ){
-            System.out.println("Warrior");
             observer.onSelectButton(Profession.WARRIOR, name);
         }
 

@@ -28,7 +28,6 @@ public class ChamberController {
 
     @FXML
     public void onOption3Clicked(){
-
     }
 
     private ChamberMediator mediator;

@@ -5,6 +5,7 @@ import Chambers.ChestAfterOpen;
 import Chambers.TraderChamber;
 import Game.Game;
 import Models.Character.Hero;
+import Models.Character.Profession;
 import Others.Item;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -27,6 +28,7 @@ public class TraderChamberController extends ChamberController implements Initia
     public void setChamber(Chamber chamber) {
         super.setChamber(chamber);
         currentChamber = (TraderChamber) chamber;
+        myHero = currentChamber.getHero();
         updateTraderInfoText();
     }
 
@@ -61,17 +63,17 @@ public class TraderChamberController extends ChamberController implements Initia
     private Text info_gold;
 
     public void buyFirstItem(){
-        amountGoldText.set( Integer.toString( currentChamber.buyItem( items[2].getValue() ) ) );
+        amountGoldText.set( Integer.toString( currentChamber.buyItem( items[0] ) ) );
         button_firstItem.setDisable( true );
     }
 
     public  void buySecondItem(){
-        amountGoldText.set( Integer.toString( currentChamber.buyItem( items[2].getValue() ) ) );
+        amountGoldText.set( Integer.toString( currentChamber.buyItem( items[1] ) ) );
         button_secondItem.setDisable( true );
     }
 
     public void buyThirdItem(){
-        amountGoldText.set( Integer.toString( currentChamber.buyItem( items[2].getValue() ) ) );
+        amountGoldText.set( Integer.toString( currentChamber.buyItem( items[2] ) ) );
         button_thirdItem.setDisable( true );
     }
 
@@ -106,8 +108,8 @@ public class TraderChamberController extends ChamberController implements Initia
 
     }
 
-    String getItemInfo( Item item ){
-        return ( "Name: " + item.getName() + "\n value: " + Integer.toString( item.getValue() ) );
+    String getItemInfo(Item item, Profession prof){
+        return myHero.showOneItem(item.getType(), prof);
     }
 
     void updateTraderInfoText(){
@@ -115,9 +117,9 @@ public class TraderChamberController extends ChamberController implements Initia
         goldInfo = currentChamber.getGoldBalance();
 
         amountGoldText.set( Integer.toString(goldInfo) );
-        itemInfoTextFirst.set( getItemInfo(items[0]) );
-        itemInfoTextSecond.set( getItemInfo(items[1]) );
-        itemInfoTextThird.set( getItemInfo(items[2]) );
+        itemInfoTextFirst.set( getItemInfo(items[0], myHero.getProf()) );
+        itemInfoTextSecond.set( getItemInfo(items[1], myHero.getProf()) );
+        itemInfoTextThird.set( getItemInfo(items[2], myHero.getProf()) );
 
     }
 }
