@@ -60,8 +60,8 @@ public class Game implements ButtonClickedObserver, ChamberMediator{
 
 
     void  prepareMap(){
-
-        Chamber myMap = mapGenerator.getMap(0);
+        int version = ThreadLocalRandom.current().nextInt(5);
+        Chamber myMap = mapGenerator.getMap(version);
         view.loadMainScene(this, stage);
         myMap.loadChamber();
 

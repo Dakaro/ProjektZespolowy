@@ -81,7 +81,7 @@ public class ChestAfterOpenController extends ChamberController implements Initi
 
     private void updateChestInfoText() {
         Item item = currentChamber.getFoundItem();
-        String foundItemInfo = myHero.showOneItem(item.getType(), myHero.getProf() ) ;
+        String foundItemInfo = item.showItem(item, myHero.getProf() );
         amountGold.setText( Integer.toString( currentChamber.getFoundGold() ) );
         itemsInfo.setText( foundItemInfo );
 

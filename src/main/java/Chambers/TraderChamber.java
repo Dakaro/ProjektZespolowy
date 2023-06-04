@@ -2,6 +2,7 @@ package Chambers;
 
 import Game.Game;
 import Models.Character.Hero;
+import Models.Character.Profession;
 import Others.Item;
 import Others.ItemType;
 

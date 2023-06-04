@@ -21,7 +21,7 @@ public class MapGenerator {
     Chamber[][] maps = new Chamber[5][20];
 
     public MapGenerator(Game game){
-        game = game;
+        this.game = game;
          win = new WinChamber(game);
          died = new DiedChamber(game);
          food = new FoodFountainChamber(game);
@@ -116,21 +116,21 @@ public class MapGenerator {
         maps[2][1] = food;
         maps[2][2] = leftRight;
         maps[2][3] = empty;
-        maps[2][4] = food;
+        maps[2][4] = new FoodFountainChamber(game);
         maps[2][5] = monsterChamber;
-        maps[2][6] = leftRight;
-        maps[2][7] = food;
+        maps[2][6] = new LeftRight(game);
+        maps[2][7] = new FoodFountainChamber(game);
         maps[2][8] = trapChamber;
-        maps[2][9] = monsterChamber;
-        maps[2][10] = chestAfterOpen;
+        maps[2][9] = new MonsterChamber(game);
+        maps[2][10] = new ChestAfterOpen(game);
         maps[2][11] = traderChamber;
-        maps[2][12] = monsterChamber;
-        maps[2][13] = food;
-        maps[2][14] = food;
-        maps[2][15] = empty;
-        maps[2][16] = chestAfterOpen;
-        maps[2][17] = food;
-        maps[2][18] = trapChamber;
+        maps[2][12] = new MonsterChamber(game);
+        maps[2][13] = new FoodFountainChamber(game);
+        maps[2][14] = new FoodFountainChamber(game);
+        maps[2][15] = new EmptyRoom(game);
+        maps[2][16] = new ChestAfterOpen(game);
+        maps[2][17] = new FoodFountainChamber(game);
+        maps[2][18] = new TrapChamber(game);
         maps[2][19] = boss;
 
         maps[2][0].option1 = maps[2][1];
@@ -200,7 +200,7 @@ public class MapGenerator {
         maps[3][18].option1 = maps[3][19];
 
         // fifth map :
-        maps[4][0] = monsterChamber;
+      /*  maps[4][0] = monsterChamber;
         maps[4][1] = leftRight;
         maps[4][2] = new MonsterChamber(game);
         maps[4][3] = food;
@@ -240,7 +240,7 @@ public class MapGenerator {
         maps[4][15].option1 = maps[4][16];
         maps[4][16].option1 = maps[4][17];
         maps[4][17].option1 = maps[4][18];
-        maps[4][18].option1 = maps[4][19];
+        maps[4][18].option1 = maps[4][19]; */
     }
 }
 

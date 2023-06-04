@@ -109,7 +109,7 @@ public class TraderChamberController extends ChamberController implements Initia
     }
 
     String getItemInfo(Item item, Profession prof){
-        return myHero.showOneItem(item.getType(), prof);
+        return item.showItem(item, prof);
     }
 
     void updateTraderInfoText(){

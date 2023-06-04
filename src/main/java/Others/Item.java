@@ -74,6 +74,96 @@ public class Item {
         return ItemType.ARMOR;
     }
 
+    public String showItem(Item item, Profession p) {
+        ItemType it = item.getType();
+        int val1 = 0, val2 = 0, val3 = 0;
+        String mainStat = "";
+        String name = "";
+        String type = "";
+        int value = 0;
+
+
+        if (it == ItemType.WEAPON) {
+            type = "weapon";
+            name = item.getName();
+            val1 = item.getMinDamage();
+            val2 = item.getMaxDamage();
+            val3 = item.getMainStat();
+            mainStat = item.getMainStatName();
+            value = item.getValue();
+            String weaponInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "minDamage: " + val1 + "\n" +
+                    "maxDamage: " + val2 + "\n" +
+                    "mainStat: " + val3 + "\n" +
+                    "mainStatName: " + mainStat + "\n" );
+            return weaponInfo;
+        } else if (it == ItemType.TALISMAN) {
+            type = "talisman";
+            name = item.getName();
+            val1 = item.getMainStat();
+            val2 = (int) item.getCriticalChance();
+            mainStat = item.getMainStatName();
+            value = item.getValue();
+
+            String talismanInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "mainStat: " + val1 + "\n" +
+                    "criticalChance: " + val2 + "\n" +
+                    "mainStatName: " + mainStat + "\n" );
+            return talismanInfo;
+        } else if (it == ItemType.SHIELD) {
+            type = "shield";
+            name = item.getName();
+            val1 = item.getDefense();
+            val2 = (int) item.getBlockChance();
+            value = item.getValue();
+
+            String shieldInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "defence: " + val1 + "\n" +
+                    "blockChance: " + val2 + "\n" );
+            return shieldInfo;
+        } else if (it == ItemType.ARMOR) {
+            type = "armor";
+            name = item.getName();
+            val1 = item.getDefense();
+            val2 = item.getHealth();
+            value = item.getValue();
+
+            String armorInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "defence: " + val1 + "\n" +
+                    "health: " + val2 + "\n" );
+            return armorInfo;
+
+        } else if (it == ItemType.HEADGEAR) {
+            type = "headgear";
+            name = item.getName();
+            val1 = item.getDefense();
+
+            if (p == Profession.MAGE) {
+                val2 = item.getMainStat();
+                mainStat = item.getMainStatName();
+            } else
+                val2 = item.getHealth();
+
+            value = item.getValue();
+
+            String headgearInfo = ( "type: " + type + "\n" +
+                    "name: " + name + "\n" +
+                    "value: " + value + "\n" +
+                    "defence: " + val1 + "\n");
+            return headgearInfo;
+        }
+
+        return "error";
+    }
+
 };
 class Weapon extends Item {
     protected int min_damage;
